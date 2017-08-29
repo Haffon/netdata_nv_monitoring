@@ -50,6 +50,8 @@ DEALINGS IN THE SOFTWARE.
 from base import SimpleService
 from subprocess import Popen, PIPE
 from re import findall
+"""
+# this code cause 'self' is not defined error when loading with netdata 1.7.1
 try:
 	import pynvml
 except Exception as e:
@@ -60,6 +62,8 @@ except Exception as e:
 			"Please fix line 1671 in pynvml.py file from the nvidia-ml-py package. 'print c_count.value' must be",
 			"'print(c_count.value)' to be compatible with Python >=3.2")
 	raise e
+"""
+import pynvml
 
 ## Plugin settings
 update_every = 1
